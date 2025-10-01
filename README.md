@@ -1,41 +1,69 @@
-# ⚡ Rust AI Agent
+# Rust AI Agent
 
-A blazing-fast AI agent powered by Rust with web scraping capabilities, demonstrating high-performance LLM integration.
+A high-performance AI agent framework built with Rust, featuring web scraping and LLM integration.
 
-## ✨ Features
+## Features
 
-- **AI Agent Framework** - Intelligent agent that can reason and use tools
-- **High-Performance Web Scraper** - Extract content from websites at lightning speed
-- **LLM Integration** - Supports OpenAI and Anthropic APIs
-- **Interactive CLI** - Beautiful command-line interface
+- AI agent with tool-based reasoning
+- Web scraper with content extraction
+- OpenAI and Anthropic API support
+- Interactive CLI with colored output
 
-## 🚀 Quick Start
+## Setup
 
-### Setup
+**Requirements:**
+- Rust 1.70+
+- OpenAI or Anthropic API key
+
+**Installation:**
 
 ```bash
-# Install dependencies
 cargo build --release
+```
 
-# Set your API key
+**Configuration:**
+
+Create a `.env` file or export environment variables:
+
+```bash
 export OPENAI_API_KEY="your-key-here"
-# OR
+# or
 export ANTHROPIC_API_KEY="your-key-here"
 ```
 
-### Usage
+## Usage
+
+**Run a query:**
 
 ```bash
-# Ask the agent to scrape a website
-cargo run --release -- run "scrape https://example.com and summarize the content"
-
-# Direct scraping (no LLM, pure speed)
-cargo run --release -- scrape https://example.com
-
-# Interactive mode
-cargo run --release -- interactive
+cargo run --quiet -- run "scrape https://example.com and summarize"
 ```
 
-## 📄 License
+**Direct web scraping:**
 
-MIT License - Feel free to use this as a starting point for your own Rust AI experiments!
+```bash
+cargo run --quiet -- scrape https://example.com
+```
+
+**Interactive mode:**
+
+```bash
+cargo run --quiet -- interactive
+```
+
+## Project Structure
+
+```
+src/
+├── main.rs           # CLI interface
+├── agent.rs          # Agent orchestration
+├── llm.rs            # LLM client wrapper
+├── lib.rs            # Public exports
+└── tools/
+    ├── mod.rs        # Tool interface
+    └── web_scraper.rs # Web scraping tool
+```
+
+## License
+
+MIT
