@@ -51,19 +51,3 @@ cargo run --quiet -- scrape https://example.com
 cargo run --quiet -- interactive
 ```
 
-## Project Structure
-
-```
-src/
-├── main.rs           # CLI interface
-├── agent.rs          # Agent orchestration
-├── llm.rs            # LLM client wrapper
-├── lib.rs            # Public exports
-└── tools/
-    ├── mod.rs        # Tool interface
-    └── web_scraper.rs # Web scraping tool
-```
-
-## License
-
-MIT
